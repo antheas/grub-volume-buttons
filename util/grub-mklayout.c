@@ -167,6 +167,8 @@ static struct console_grub_equivalence console_grub_equivalences_common[] = {
   {"Next", GRUB_TERM_KEY_NPAGE},
   {"Prior", GRUB_TERM_KEY_PPAGE},
   {"Remove", GRUB_TERM_KEY_DC},
+  {"VolUp", GRUB_TERM_KEY_VOLUP},
+  {"VolDown", GRUB_TERM_KEY_VOLDOWN},
   {"VoidSymbol", 0},
 
   /* "Undead" keys since no dead key support in GRUB.  */

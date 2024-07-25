@@ -102,6 +102,8 @@ static const struct
   {
     {0x1c, GRUB_KEYBOARD_KEY_NUMENTER},
     {0x1d, GRUB_KEYBOARD_KEY_RIGHT_CTRL},
+    {0x2e, GRUB_KEYBOARD_KEY_VOLDOWN},
+    {0x30, GRUB_KEYBOARD_KEY_VOLUP},
     {0x35, GRUB_KEYBOARD_KEY_NUMSLASH },
     {0x38, GRUB_KEYBOARD_KEY_RIGHT_ALT},
     {0x47, GRUB_KEYBOARD_KEY_HOME},
@@ -193,6 +195,8 @@ static const struct
   {
     {0x11, GRUB_KEYBOARD_KEY_RIGHT_ALT},
     {0x14, GRUB_KEYBOARD_KEY_RIGHT_CTRL},
+    {0x21, GRUB_KEYBOARD_KEY_VOLDOWN},
+    {0x32, GRUB_KEYBOARD_KEY_VOLUP},
     {0x4a, GRUB_KEYBOARD_KEY_NUMSLASH},
     {0x5a, GRUB_KEYBOARD_KEY_NUMENTER},
     {0x69, GRUB_KEYBOARD_KEY_END},
@@ -361,6 +365,10 @@ grub_ps2_process_incoming_byte (struct grub_ps2_state *ps2_state,
 #endif
   switch (code)
     {
+      case GRUB_KEYBOARD_KEY_VOLDOWN:
+  return GRUB_TERM_KEY_VOLDOWN;
+      case GRUB_KEYBOARD_KEY_VOLUP:
+  return GRUB_TERM_KEY_VOLUP;
       case GRUB_KEYBOARD_KEY_CAPS_LOCK:
 	ps2_state->at_keyboard_status ^= GRUB_TERM_STATUS_CAPS;
 	ps2_state->led_status ^= KEYBOARD_LED_CAPS;

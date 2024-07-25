@@ -54,6 +54,8 @@
 #define GRUB_TERM_KEY_F12       (GRUB_TERM_EXTENDED | 0x58)
 #define GRUB_TERM_KEY_INSERT    (GRUB_TERM_EXTENDED | 0x52)
 #define GRUB_TERM_KEY_CENTER    (GRUB_TERM_EXTENDED | 0x4c)
+#define GRUB_TERM_KEY_VOLDOWN   (GRUB_TERM_EXTENDED | 0x60)
+#define GRUB_TERM_KEY_VOLUP     (GRUB_TERM_EXTENDED | 0x61)
 
 /* Hex value is used for ESC, since '\e' is nonstandard */
 #define GRUB_TERM_ESC		0x1b

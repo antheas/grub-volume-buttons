@@ -138,6 +138,8 @@ typedef enum grub_keyboard_key
     GRUB_KEYBOARD_KEY_RIGHT_CTRL = 0xe4,
     GRUB_KEYBOARD_KEY_RIGHT_SHIFT = 0xe5,
     GRUB_KEYBOARD_KEY_RIGHT_ALT = 0xe6,
+    GRUB_KEYBOARD_KEY_VOLDOWN = 0xe7,
+    GRUB_KEYBOARD_KEY_VOLUP = 0xe8,
   } grub_keyboard_key_t;
 
 unsigned EXPORT_FUNC(grub_term_map_key) (grub_keyboard_key_t code, int status);
