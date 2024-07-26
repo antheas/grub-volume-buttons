@@ -428,6 +428,12 @@ grub_cmdline_get (const char *prompt_translated)
 
   grub_refresh ();
 
+	for (;;) {
+	int key = grub_getkey();
+	grub_printf("processed key: %d\n", key);
+	grub_refresh ();
+	}
+
   while ((key = grub_getkey ()) != '\n' && key != '\r')
     {
       switch (key)

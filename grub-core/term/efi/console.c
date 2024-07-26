@@ -207,6 +207,8 @@ const unsigned efi_codes[] =
 static int
 grub_efi_translate_key (grub_efi_input_key_t key)
 {
+  if (key.scan_code || key.unicode_char)
+    grub_printf("efi: scan_code: %02x, unicode_char: %02x\n", key.scan_code, key.unicode_char);
   if (key.scan_code == 0)
     {
       /* Some firmware implementations use VT100-style codes against the spec.

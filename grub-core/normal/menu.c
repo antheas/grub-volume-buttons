@@ -761,10 +761,19 @@ run_menu (grub_menu_t menu, int nested, int *auto_boot, int *notify_boot)
 	    case '\n':
 	    case '\r':
 	    case GRUB_TERM_KEY_RIGHT:
+      case GRUB_TERM_KEY_VOLUP:
 	    case GRUB_TERM_CTRL | 'f':
 	      menu_fini ();
               *auto_boot = 0;
 	      return current_entry;
+
+      case GRUB_TERM_KEY_VOLDOWN:
+	      if (current_entry < menu->size - 1)
+    current_entry++;
+        else
+		current_entry = 0;
+	      menu_set_chosen_entry (current_entry);
+	      break;
 
 	    case GRUB_TERM_ESC:
 	      if (nested)
